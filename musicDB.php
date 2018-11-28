@@ -1,26 +1,22 @@
 <?php
-session_start();
 
-try {
+  $conn = mysqli_connect('localhost', 'ryan', 'password', 'music');
+    if (!$conn) {
+      die("Connection Failed: ".mysqli_connect_error());
+    }
 
-  include_once(checksession.php);
+    $sql = "SELECT * FROM Song";
+    $result = mysqli_query($conn, $sql);
 
-} catch(PDOException $e) {
-  die($e -> getMessage());
-}
-// $con = mysqli_connect("localhost", "root", "root", "northwind");
-//   if (!$con)
-//     die("Failed: ".mysqli_connect_error());
-//
-//   $result = mysqli_query($con, "SELECT * FROM shippers");
+    // mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>Music Database</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="music.css">
-  <link rel="stylesheet" href="bootstrap.css">
+  <link rel="stylesheet" href="music.css" type="text/css"/>
+  <link rel="stylesheet" href="bootstrap.css" type="text/css"/>
 </head>
 <body>
   <header>
@@ -32,19 +28,27 @@ try {
           <div class="col-md-12">
             <h1>Music Library</h1>
             <table border = 1>
-              <tr>
-                <th>Title</th>
-                <th>Artist</th>
-                <th>Genre</th>
-                <th>Duration</th>
-                <th>Year</th>
-              </tr>
-                <td>Song1</td>
-                <td>Artist Name</td>
-                <td>Rock</td>
-                <td>5:00</td>
-                <td>1996</td>
-            </table>
+            <tr>
+              <th>Title</th>
+              <th>Artist</th>
+              <th>Album</th>
+              <th>Genre</th>
+              <th>Year</th>
+            </tr>
+            <?php
+            if (mysqli_num_rows($result) > 0) {
+              while($row = mysqli_fetch_assoc($result)) {
+                echo '
+                    <td>'.$row['title'].'</td>
+                    <td>'.$row['artist'].'</td>
+                    <td>'.$row['album'].'</td>
+                    <td>'.$row['genre'].'</td>
+                    <td>'.$row['year'].'</td>
+                </table>';
+              }
+            }
+
+            ?>
           </div>
         </div>
       </div>
