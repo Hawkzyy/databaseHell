@@ -15,8 +15,8 @@
 <head>
   <title>Music Database</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="/css/music.css" type="text/css"/>
   <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/music.css" type="text/css"/>
 </head>
 <body>
   <header>
@@ -26,7 +26,7 @@
                     <a class="navbar-brand pull-left" href="">Music Library</a>
                 </div>
                 <div class="col-md-2">
-                    <form class="pull-left" action="http://www.randyconnolly.com" method="get">
+                    <form class="pull-left" action="" method="get">
                             <div class="input-group">
                                 <input class ="form-control" name="search" type="text" placeholder="Search">
                                 <div class= "input-group-btn">
@@ -38,6 +38,9 @@
                         </form>
                 </div>
                 <div class="col-md-5">
+                  <ul class="nav navbar-nav pull-right">
+                  <li><a href=""><span class="glyphicon glyphicon-upload"></span> Add Track</a></li>
+                </ul>
                 </div>
             </div>
         </nav>
@@ -48,8 +51,10 @@
         <div class="row">
           <div class="col-md-12">
             <!-- <h1>Music Library</h1> -->
+            <div style="overflow-x:auto;">
             <table>
             <tr>
+              <th><!--Numbers --></th> 
               <th>Title</th>
               <th>Artist</th>
               <th>Album</th>
@@ -61,6 +66,7 @@
               while($row = mysqli_fetch_assoc($result)) {
                 echo '
                 <tr>
+                    <td>'.$row['songID'].'</td>
                     <td>'.$row['title'].'</td>
                     <td>'.$row['artist'].'</td>
                     <td>'.$row['album'].'</td>
@@ -72,6 +78,7 @@
 
             ?>
             </table>
+          </div>
           </div>
         </div>
       </div>
