@@ -15,8 +15,8 @@
 <head>
   <title>Music Database</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="./css/music.css" type="text/css"/>
-  <link rel="stylesheet" href="./css/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/music.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
 </head>
 <body>
   <header>
@@ -48,7 +48,7 @@
         <div class="row">
           <div class="col-md-12">
             <!-- <h1>Music Library</h1> -->
-            <table border = 1>
+            <table>
             <tr>
               <th>Title</th>
               <th>Artist</th>
@@ -60,16 +60,18 @@
             if (mysqli_num_rows($result) > 0) {
               while($row = mysqli_fetch_assoc($result)) {
                 echo '
+                <tr>
                     <td>'.$row['title'].'</td>
                     <td>'.$row['artist'].'</td>
                     <td>'.$row['album'].'</td>
                     <td>'.$row['genre'].'</td>
                     <td>'.$row['year'].'</td>
-                </table>';
+                </tr>';
               }
             }
 
             ?>
+            </table>
           </div>
         </div>
       </div>
