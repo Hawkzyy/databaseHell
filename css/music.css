@@ -4,36 +4,43 @@ h1 {
 
 body {
   padding: 8px;
+
 }
 
 table {
-  border-collapse: collapse;
   width: 100%;
-  border-radius: 45%;
 }
 
-table, td, th {
-  padding: 15px;
+table, th, td {
+  border-collapse: collapse;
   height: 40px;
-  border: 1px solid black;
+  border-bottom: 1px solid #ddd;
+}
+
+th, td {
+  text-align: center;
+  padding: 15px;
 }
 
 th {
-  text-align: center;
-  background-color: #198c19;
+  height: 50px;
+  background-color: #191919;
   color: white;
 }
 
 td {
-  text-align: left;
-  color: white;
+  color: black;
 }
 
 tr:nth-child(even) {
-  background-color: #323232;
+  background-color: #f2f2f2;
 }
 
 tr:nth-child(odd) {
-  background-color: #7f7f7f;
+  background-color: #white;
 }
 
+.navbar-default {
+  background-color: #e5e5e5;
+  border-color: #e7e7e7;
+}
