@@ -15,12 +15,16 @@
   <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
   <link rel="stylesheet" href="/css/nav.css" type="text/css"/>
   <link rel="stylesheet" href="/css/music.css" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+  <script type="text/javascript" src="/js/music.js"></script>
 </head>
 <body>
   <header>
     <nav class="navbar navbar-default">
                 <div class="col-md-4 noshrink">
+                  <div class="logoFont">
                     <a class="navbar-brand pull-left" href="musicDB.php?field=songID">Music Library</a>
+                  </div>
                 </div>
                 <div class="col-md-3">
                   <form class="pull-left">
@@ -36,7 +40,7 @@
                 </div>
                 <div class="col-md-5">
                   <ul class="nav navbar-nav pull-right">
-                  <li><a href=""><span class="glyphicon glyphicon-upload"></span> Add Track</a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-upload"></span> Add Track</a></li>
                 </ul>
                 </div>
         </nav>
@@ -64,12 +68,12 @@
               while($row = mysqli_fetch_array($result)) {
                 echo '
                 <tr>
-                    <td>'.$row['songID'].'</td>
-                    <td>'.$row['title'].'</td>
-                    <td>'.$row['artist'].'</td>
-                    <td>'.$row['album'].'</td>
-                    <td>'.$row['genre'].'</td>
-                    <td>'.$row['year'].'</td>
+                    <td onclick="cellLink()">'.$row['songID'].'</td>
+                    <td onclick="cellLink()">'.$row['title'].'</td>
+                    <td onclick="cellLink()">'.$row['artist'].'</td>
+                    <td onclick="cellLink()">'.$row['album'].'</td>
+                    <td onclick="cellLink()">'.$row['genre'].'</td>
+                    <td onclick="cellLink()">'.$row['year'].'</td>
                 </tr>';
 
               }
