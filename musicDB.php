@@ -5,7 +5,6 @@
       die("Connection Failed: ".mysqli_connect_error());
     }
 
-    include('sorting.php');
     // mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -24,16 +23,16 @@
                     <a class="navbar-brand pull-left" href="musicDB.php?field=songID">Music Library</a>
                 </div>
                 <div class="col-md-3">
-                    <form class="pull-left" action="" method="get">
-                            <div class="input-group">
-                                <input class ="form-control" name="search" type="text" placeholder="Search">
-                                <div class= "input-group-btn">
-                                    <button  type="submit" class="btn btn-primary">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+                  <form class="pull-left">
+                          <div class="input-group">
+                              <input class ="form-control" name="search" type="text" placeholder="Search" onsubmit="searchBar();">
+                              <div class= "input-group-btn">
+                                  <button type="text" class="btn btn-primary">
+                                      <span class="glyphicon glyphicon-search"></span>
+                                  </button>
+                              </div>
+                          </div>
+                      </form>
                 </div>
                 <div class="col-md-5">
                   <ul class="nav navbar-nav pull-right">
@@ -47,7 +46,6 @@
       <div class="pagewidth container-fluid">
         <div class="row">
           <div class="col-md-12">
-            <!-- <h1>Music Library</h1> -->
             <div>
             <table>
             <tr>
@@ -60,9 +58,10 @@
             </tr>
             <?php
 
-            $result = mysqli_query($conn, $sql);
+            include('search.php');
+
             if (mysqli_num_rows($result) > 0) {
-              while($row = mysqli_fetch_assoc($result)) {
+              while($row = mysqli_fetch_array($result)) {
                 echo '
                 <tr>
                     <td>'.$row['songID'].'</td>
@@ -72,6 +71,7 @@
                     <td>'.$row['genre'].'</td>
                     <td>'.$row['year'].'</td>
                 </tr>';
+
               }
             }
 
