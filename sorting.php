@@ -42,5 +42,5 @@ if (isset($_GET['field'])) {
 }
 
 $sql = "SELECT * FROM Song ORDER BY $field ASC";
-
+$result = mysqli_query($conn, $sql);
 ?>
