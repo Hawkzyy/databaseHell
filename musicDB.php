@@ -5,9 +5,7 @@
       die("Connection Failed: ".mysqli_connect_error());
     }
 
-    $sql = "SELECT * FROM Song";
-    $result = mysqli_query($conn, $sql);
-
+    include('sorting.php');
     // mysqli_close($conn);
 ?>
 <!DOCTYPE html>
@@ -54,14 +52,16 @@
             <div style="overflow-x:auto;">
             <table>
             <tr>
-              <th><!--Numbers --></th> 
-              <th>Title</th>
-              <th>Artist</th>
-              <th>Album</th>
-              <th>Genre</th>
-              <th>Year</th>
+              <th><!--Numbers --></th>
+              <th><a href="musicDB.php?field=title">Title</a></th>
+              <th><a href="musicDB.php?field=artist">Artist</a></th>
+              <th><a href="musicDB.php?field=album">Album</a></th>
+              <th><a href="musicDB.php?field=genre">Genre</a></th>
+              <th><a href="musicDB.php?field=year">Year</a></th>
             </tr>
             <?php
+
+            $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
               while($row = mysqli_fetch_assoc($result)) {
                 echo '
