@@ -14,16 +14,16 @@
   <title>Music Database</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/css/bootstrap.css" type="text/css"/>
+  <link rel="stylesheet" href="/css/nav.css" type="text/css"/>
   <link rel="stylesheet" href="/css/music.css" type="text/css"/>
 </head>
 <body>
   <header>
     <nav class="navbar navbar-default">
-            <div class="container-fluid row">
-                <div class="col-md-5 noshrink">
-                    <a class="navbar-brand pull-left" href="">Music Library</a>
+                <div class="col-md-4 noshrink">
+                    <a class="navbar-brand pull-left" href="musicDB.php?field=songID">Music Library</a>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <form class="pull-left" action="" method="get">
                             <div class="input-group">
                                 <input class ="form-control" name="search" type="text" placeholder="Search">
@@ -40,7 +40,6 @@
                   <li><a href=""><span class="glyphicon glyphicon-upload"></span> Add Track</a></li>
                 </ul>
                 </div>
-            </div>
         </nav>
   </header>
   <main>
@@ -49,7 +48,7 @@
         <div class="row">
           <div class="col-md-12">
             <!-- <h1>Music Library</h1> -->
-            <div style="overflow-x:auto;">
+            <div>
             <table>
             <tr>
               <th><!--Numbers --></th>
