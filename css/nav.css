@@ -1,0 +1,24 @@
+.navbar {
+  position: relative;
+  height: auto;
+  width: 100%;
+  border: 1px solid #4c4cff;
+  background-color: #4c4cff;
+  border-radius: 0px;
+}
+
+.noshrink {
+  border-radius: 0px;
+}
+
+ul.nav li a, ul.nav li a:visited {
+    color: white;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+    color: white;
+}
+
+ul.nav li.active a {
+    color: white;
+}
