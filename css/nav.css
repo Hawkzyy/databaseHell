@@ -7,6 +7,43 @@
   border-radius: 0px;
 }
 
+.logoFont {
+  font-size: 1.3em;
+}
+
+.input-group {
+  margin-top: 10px;
+}
+
+.navbar-default .navbar-nav > li > a {
+  font-family: 'Audiowide', cursive;
+
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  font-family: 'Audiowide', cursive;
+  font-size: 1.1em;
+  color: darkblue;
+}
+
+.navbar-default .navbar-brand {
+	margin: 3px;
+	color: white;
+	text-shadow: 2px 2px black;
+}
+
+.navbar-default .navbar-brand:hover {
+	margin: 3px;
+	color: darkblue;
+	border-radius: 20px;
+	background-color: grey;
+}
+
+.navbar-default .navbar-brand:visited {
+	text-decoration: none;
+	color: white;
+}
+
 .noshrink {
   border-radius: 0px;
 }
