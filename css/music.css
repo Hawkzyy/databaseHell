@@ -2,6 +2,11 @@ h1 {
   text-align: center;
 }
 
+header {
+  font-family: 'Audiowide', cursive;
+
+}
+
 body {
   background-color: #9393ff;
 }
@@ -13,9 +18,10 @@ a:hover {
 table {
   background-color: white;
   width: 100%;
-  /* border-right: 1px solid blue;
-  border-left: 1px solid blue; */
+  height: auto;
+  text-decoration: none;
 }
+
 
 table, th, td {
   border-collapse: collapse;
@@ -29,13 +35,19 @@ th, td {
 }
 
 th {
+  font-family: 'Audiowide', cursive;
   height: 50px;
   background-color: #191919;
   color: white;
+
 }
 
 td {
   color: black;
+}
+
+td:hover {
+  cursor: pointer;
 }
 
 tr:hover {
